@@ -1,0 +1,9 @@
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Tools.dll.config
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Tools.dll
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Tools.pdb
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Microsoft.HockeyApp.Core45.dll
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Microsoft.HockeyApp.Kit.dll
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Newtonsoft.Json.dll
+C:\work\ACDDokanNet-master\Tools\bin\Debug\Newtonsoft.Json.xml
+C:\work\ACDDokanNet-master\Tools\obj\Debug\Tools.dll
+C:\work\ACDDokanNet-master\Tools\obj\Debug\Tools.pdb

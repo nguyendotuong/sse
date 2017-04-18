@@ -1,0 +1,17 @@
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Clouds.MicrosoftOneDrive.dll.config
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Clouds.MicrosoftOneDrive.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Clouds.MicrosoftOneDrive.pdb
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Cloud.Common.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.Graph.Core.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.OneDrive.Sdk.Authentication.Desktop.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.OneDrive.Sdk.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Newtonsoft.Json.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Cloud.Common.pdb
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\bin\Debug\Newtonsoft.Json.xml
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\obj\Debug\MicrosoftOneDrive.csprojResolveAssemblyReference.cache
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\obj\Debug\Clouds.MicrosoftOneDrive.g.resources
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\obj\Debug\Clouds.MicrosoftOneDrive.dll
+C:\work\ACDDokanNet-master\MicrosoftOneDrive\obj\Debug\Clouds.MicrosoftOneDrive.pdb

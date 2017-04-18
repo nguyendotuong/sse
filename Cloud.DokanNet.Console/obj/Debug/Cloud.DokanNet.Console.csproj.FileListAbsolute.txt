@@ -1,0 +1,5 @@
+C:\work\ACDDokanNet-master\Cloud.DokanNet.Console\bin\Debug\ACD.DokanNet.Console.exe.config
+C:\work\ACDDokanNet-master\Cloud.DokanNet.Console\bin\Debug\ACD.DokanNet.Console.exe
+C:\work\ACDDokanNet-master\Cloud.DokanNet.Console\bin\Debug\ACD.DokanNet.Console.pdb
+C:\work\ACDDokanNet-master\Cloud.DokanNet.Console\obj\Debug\ACD.DokanNet.Console.exe
+C:\work\ACDDokanNet-master\Cloud.DokanNet.Console\obj\Debug\ACD.DokanNet.Console.pdb

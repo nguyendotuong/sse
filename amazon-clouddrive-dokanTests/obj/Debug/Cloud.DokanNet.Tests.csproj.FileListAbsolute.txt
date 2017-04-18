@@ -1,0 +1,1 @@
+C:\work\ACDDokanNet-master\amazon-clouddrive-dokanTests\obj\Debug\Cloud.DokanNet.Tests.csprojResolveAssemblyReference.cache

@@ -1,0 +1,4 @@
+C:\work\ACDDokanNet-master\AmazonCloudDrive\obj\Debug\AmazonCloudDrive.csprojResolveAssemblyReference.cache
+C:\work\ACDDokanNet-master\AmazonCloudDrive\obj\Debug\MountWaitBox.g.cs
+C:\work\ACDDokanNet-master\AmazonCloudDrive\obj\Debug\Clouds.AmazonCloudDrive_MarkupCompile.cache
+C:\work\ACDDokanNet-master\AmazonCloudDrive\obj\Debug\Clouds.AmazonCloudDrive_MarkupCompile.lref

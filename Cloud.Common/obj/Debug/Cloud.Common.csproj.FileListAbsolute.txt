@@ -1,0 +1,6 @@
+C:\work\ACDDokanNet-master\Cloud.Common\bin\Debug\Cloud.Common.dll
+C:\work\ACDDokanNet-master\Cloud.Common\bin\Debug\Cloud.Common.pdb
+C:\work\ACDDokanNet-master\Cloud.Common\bin\Debug\Newtonsoft.Json.dll
+C:\work\ACDDokanNet-master\Cloud.Common\bin\Debug\Newtonsoft.Json.xml
+C:\work\ACDDokanNet-master\Cloud.Common\obj\Debug\Cloud.Common.dll
+C:\work\ACDDokanNet-master\Cloud.Common\obj\Debug\Cloud.Common.pdb
