@@ -537,14 +537,16 @@
                     throw new FileNotFoundException($"Parent folder not found: {dir}");
                 }
 
-                item = FSItem.MakeUploading(filePath, Guid.NewGuid().ToString(), dirItem.Id, 0);
+                //item = FSItem.MakeUploading(filePath, Guid.NewGuid().ToString(), dirItem.Id, 0);
 
-                var file = uploadService.OpenNew(item);
-                SmallFilesCache.AddAsLink(item, file.UploadCachePath);
+                //var file = uploadService.OpenNew(item);
+                //SmallFilesCache.AddAsLink(item, file.UploadCachePath);
 
-                itemsTreeCache.Add(item);
+                //itemsTreeCache.Add(item);
 
-                return file;
+                //return file;
+
+                return new NewFileBlockWriter(null, null);
             }
 
             await WaitForReal(item, 25000);
@@ -552,12 +554,14 @@
             if (mode == FileMode.Create || mode == FileMode.Truncate)
             {
                 Log.Trace($"Opening {filePath} as Truncate because mode:{mode} and length {item.Length}");
-                item.Length = 0;
-                SmallFilesCache.Delete(item);
-                item.MakeUploading();
-                var file = uploadService.OpenTruncate(item);
+                //item.Length = 0;
+                //SmallFilesCache.Delete(item);
+                //item.MakeUploading();
+                //var file = uploadService.OpenTruncate(item);
 
-                return file;
+                //return file;
+
+                return new NewFileBlockWriter(null, null);
             }
 
             if (mode == FileMode.Open || mode == FileMode.Append || mode == FileMode.OpenOrCreate)
