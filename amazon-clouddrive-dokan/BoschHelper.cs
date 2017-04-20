@@ -24,6 +24,7 @@ namespace Azi.Cloud.DokanNet
                 aes.BlockSize = mD5.HashSize;
                 aes.IV = mD5.ComputeHash(Encoding.ASCII.GetBytes(IV));
                 aes.Key = sha.ComputeHash(Encoding.ASCII.GetBytes(KEY));
+                aes.Mode = CipherMode.CBC;
                 aes.Padding = PaddingMode.Zeros;
 
                 boschAES = new BoschAES
@@ -34,13 +35,13 @@ namespace Azi.Cloud.DokanNet
             }
         }
 
-        public static void Encrypt(string inputFileName, string outputFileName)
+        public static void Encrypt(string inputFileName, string outputFileName, bool encrypt = true)
         {
             try
             {
                 using (var inputFileStream = new FileStream(inputFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 using (var outputFileStream = new FileStream(outputFileName, FileMode.OpenOrCreate, FileAccess.Write))
-                using (var cryptoStream = new CryptoStream(outputFileStream, boschAES.Encryptor, CryptoStreamMode.Write))
+                using (var cryptoStream = new CryptoStream(outputFileStream, encrypt ? boschAES.Encryptor : boschAES.Decryptor, CryptoStreamMode.Write))
                 {
                     int bufferSize = 4096;
                     byte[] buffer = new byte[bufferSize];
@@ -54,7 +55,7 @@ namespace Azi.Cloud.DokanNet
                         }
                     }
                     while (bytesRead != 0);
-                    cryptoStream.FlushFinalBlock();
+                    //cryptoStream.FlushFinalBlock();
                 }
             }
             catch (Exception ex)
@@ -83,33 +84,6 @@ namespace Azi.Cloud.DokanNet
             }
         }
 
-        public static void Decrypt(string inputFileName, string outputFileName)
-        {
-            try
-            {
-                using (var inputFileStream = new FileStream(inputFileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-                using (var outputFileStream = new FileStream(outputFileName, FileMode.OpenOrCreate, FileAccess.Write))
-                using (var cryptoStream = new CryptoStream(inputFileStream, boschAES.Decryptor, CryptoStreamMode.Read))
-                {
-                    int bufferSize = 4096;
-                    byte[] buffer = new byte[bufferSize];
-                    int bytesRead;
-                    do
-                    {
-                        bytesRead = cryptoStream.Read(buffer, 0, bufferSize);
-                        if (bytesRead != 0)
-                        {
-                            outputFileStream.Write(buffer, 0, bytesRead);
-                        }
-                    } while (bytesRead != 0);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex);
-            }
-        }
-
         public static void Decrypt(string inputFileName)
         {
             try
@@ -119,7 +93,7 @@ namespace Azi.Cloud.DokanNet
                 File.Copy(inputFileName, tempFile, true);
 
                 // Decrypt temp file
-                Decrypt(tempFile, inputFileName);
+                Encrypt(tempFile, inputFileName, false);
 
                 // Delete temp file
                 File.Delete(tempFile);

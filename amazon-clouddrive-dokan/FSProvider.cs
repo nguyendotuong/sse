@@ -546,7 +546,7 @@
 
                 //return file;
 
-                return new NewFileBlockWriter(null, null);
+                return new NewFileBlockWriter(null, string.Empty);
             }
 
             await WaitForReal(item, 25000);
@@ -561,7 +561,7 @@
 
                 //return file;
 
-                return new NewFileBlockWriter(null, null);
+                return new NewFileBlockWriter(null, string.Empty);
             }
 
             if (mode == FileMode.Open || mode == FileMode.Append || mode == FileMode.OpenOrCreate)

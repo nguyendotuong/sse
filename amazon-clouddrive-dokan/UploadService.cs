@@ -98,17 +98,17 @@
 
         public async Task AddOverwrite(FSItem item)
         {
-            //var info = new UploadInfo(item)
-            //{
-            //    Overwrite = true
-            //};
+            var info = new UploadInfo(item)
+            {
+                Overwrite = true
+            };
 
-            //Directory.CreateDirectory(cachePath);
-            //var path = Path.Combine(cachePath, item.Id);
-            //await WriteInfo(path + ".info", info);
-            //leftUploads.Add(info);
-            //allUploads.TryAdd(info.Id, info);
-            //await (OnUploadAdded?.Invoke(info) ?? Task.FromResult(0));
+            Directory.CreateDirectory(cachePath);
+            var path = Path.Combine(cachePath, item.Id);
+            await WriteInfo(path + ".info", info);
+            leftUploads.Add(info);
+            allUploads.TryAdd(info.Id, info);
+            await (OnUploadAdded?.Invoke(info) ?? Task.FromResult(0));
         }
 
         public async Task AddUpload(FSItem parent, string file)
@@ -266,13 +266,13 @@
 
         private async Task AddUpload(FSItem item)
         {
-            //var info = new UploadInfo(item);
+            var info = new UploadInfo(item);
 
-            //var path = Path.Combine(cachePath, item.Id);
-            //await WriteInfo(path + ".info", info);
-            //leftUploads.Add(info);
-            //allUploads.TryAdd(info.Id, info);
-            //await (OnUploadAdded?.Invoke(info) ?? Task.FromResult(0));
+            var path = Path.Combine(cachePath, item.Id);
+            await WriteInfo(path + ".info", info);
+            leftUploads.Add(info);
+            allUploads.TryAdd(info.Id, info);
+            await (OnUploadAdded?.Invoke(info) ?? Task.FromResult(0));
         }
 
         private async Task<string> CalcContentId(string path)

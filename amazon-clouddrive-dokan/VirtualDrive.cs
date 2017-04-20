@@ -92,6 +92,11 @@
         {
             try
             {
+                if (mode == FileMode.CreateNew && !string.IsNullOrEmpty(fileName) && fileName.Equals(@"//"))
+                {
+                    return DokanResult.Error;
+                }
+
                 var res = Wait(MainCreateFile(fileName, access, share, mode, options, info));
 #if TRACE
                 var readWriteAttributes = (access & DataAccess) == 0;
