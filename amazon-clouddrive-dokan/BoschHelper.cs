@@ -103,5 +103,11 @@ namespace Azi.Cloud.DokanNet
                 Log.Error(ex);
             }
         }
+
+        public static bool IsPastingFile(string fileName, FileMode mode)
+        {
+            return mode == FileMode.CreateNew && !string.IsNullOrEmpty(fileName)
+                            && !fileName.Equals(@"\New folder");
+        }
     }
 }
