@@ -11,6 +11,7 @@
     using SharpShell.Attributes;
     using SharpShell.SharpContextMenu;
     using Trinet.Core.IO.Ntfs;
+    using Microsoft.Win32;
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Interoperability", "CA1405:ComVisibleTypeBaseTypesShouldBeComVisible", Justification = "Must be COM visible")]
     [Guid("CAEE83F5-A0B4-4FAD-A94B-8CEB0A78EA54")]
@@ -59,7 +60,6 @@
                 if (Directory.Exists(SelectedItemPaths.Single()) && Clipboard.ContainsFileDropList())
                 {
                     menu.Items.Add(new ToolStripMenuItem("Upload here", null, UploadHere));
-                    //menu.Items["Paste"].Enabled = false;
                 }
 
                 if (info is INodeExtendedInfoWebLink)

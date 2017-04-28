@@ -1,9 +1,8 @@
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Azi.CloudHold.ShellExtension.dll
-C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Azi.CloudHold.ShellExtension.pdb
+C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Trinet.Core.IO.Ntfs.dll
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Cloud.Common.dll
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Newtonsoft.Json.dll
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\SharpShell.dll
-C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Trinet.Core.IO.Ntfs.dll
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Cloud.Common.pdb
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Newtonsoft.Json.xml
 C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\SharpShell.pdb
@@ -12,3 +11,4 @@ C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Trinet.Core.IO.Ntfs.xml
 C:\work\ACDDokanNet-master\ShellExtension\obj\Debug\Cloud.ShellExtension.csprojResolveAssemblyReference.cache
 C:\work\ACDDokanNet-master\ShellExtension\obj\Debug\Azi.CloudHold.ShellExtension.dll
 C:\work\ACDDokanNet-master\ShellExtension\obj\Debug\Azi.CloudHold.ShellExtension.pdb
+C:\work\ACDDokanNet-master\ShellExtension\bin\Debug\Azi.CloudHold.ShellExtension.pdb
