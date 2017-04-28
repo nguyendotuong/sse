@@ -206,6 +206,47 @@
             }
         }
 
+        public async Task SearchAsync(string searchInput)
+        {
+            if (MountLetter == null)
+            {
+                return;
+            }
+
+            if (App == null)
+            {
+                throw new NullReferenceException();
+            }
+
+            try
+            {
+                await Task.Factory.StartNew(() =>
+                {
+                    if (MountLetter == null)
+                    {
+                        return;
+                    }
+
+                    try
+                    {
+                        string folder = Uri.EscapeDataString(string.Format(@"{0}:", MountLetter));
+                        string uri = "search:query=content:" + searchInput + "&crumb=location:" + folder;
+                        Process.Start(new ProcessStartInfo(uri));
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e);
+                        throw new InvalidOperationException(e.Message, e);
+                    }
+
+                });
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         internal void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

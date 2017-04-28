@@ -53,5 +53,11 @@
         {
             await Model.UnmountAsync();
         }
+
+        private async void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            var searchInput = searchTextBox.Text;
+            await Model.SearchAsync(searchInput.Trim());
+        }
     }
 }
