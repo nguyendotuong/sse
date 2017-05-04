@@ -98,17 +98,36 @@
 
         public async Task AddOverwrite(FSItem item)
         {
-            var info = new UploadInfo(item)
+            try
             {
-                Overwrite = true
-            };
+                Directory.CreateDirectory(cachePath);
 
-            Directory.CreateDirectory(cachePath);
-            var path = Path.Combine(cachePath, item.Id);
-            await WriteInfo(path + ".info", info);
-            leftUploads.Add(info);
-            allUploads.TryAdd(info.Id, info);
-            await (OnUploadAdded?.Invoke(info) ?? Task.FromResult(0));
+                // To copy a source file to file in cache folder
+                var sourceFile = Path.Combine(cachePath, item.Id);
+                var sourceFileInfoPath = sourceFile + ".info";
+                var tempFile = sourceFile + ".temp";
+                File.Copy(sourceFile, tempFile, true);
+                BoschHelper.Encrypt(sourceFile, tempFile);
+                var tempFileInfo = new FileInfo(tempFile);
+
+                File.Delete(sourceFileInfoPath);
+                var info = new UploadInfo(item)
+                {
+                    Length = tempFileInfo.Length,
+                    Path = tempFile,
+                    SourcePath = tempFile,
+                    Overwrite = true
+                };
+
+                await WriteInfo(sourceFileInfoPath, info);
+                leftUploads.Add(info);
+                allUploads.TryAdd(info.Id, info);
+                OnUploadAdded?.Invoke(info);
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
 
         public async Task AddUpload(FSItem parent, string file)
@@ -422,7 +441,7 @@
                             return;
                         }
 
-                        if (item.ContentId == checknode.ContentId)
+                        if (item.ContentId != null && item.ContentId == checknode.ContentId)
                         {
                             Log.Warn($"File content is the same. Skip overwrite: {item.Path}");
                             node = checknode;
