@@ -719,12 +719,6 @@
 
             if (info.IsDirectory)
             {
-                ////Avoid pasting file by normal way
-                if (BoschHelper.IsPastingFile(fileName, mode))
-                {
-                    return DokanResult.AccessDenied;
-                }
-
                 if (mode == FileMode.CreateNew)
                 {
                     return MainCreateDirectory(fileName);
@@ -810,12 +804,6 @@
 
         private async Task<NtStatus> MainOpenFile(string fileName, FileAccess access, FileShare share, FileMode mode, FileOptions options, DokanFileInfo info)
         {
-            ////Avoid pasting file by normal way
-            if (BoschHelper.IsPastingFile(fileName, mode))
-            {
-                return DokanResult.AccessDenied;
-            }
-
             var readAccess = (access & DataReadAccess) != 0;
             var writeAccess = (access & DataWriteAccess) != 0;
 
